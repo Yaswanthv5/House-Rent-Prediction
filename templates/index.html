@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center">🏠 House Price Prediction</h2>
+        <form method="post" class="p-4 bg-white shadow rounded">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Median Income of the household(In millions, ex:6.6):</label>
+                    <input type="text" name="MedInc" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label>House Age:</label>
+                    <input type="text" name="HouseAge" class="form-control" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Average Rooms:</label>
+                    <input type="text" name="AveRooms" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Average Bedrooms:</label>
+                    <input type="text" name="AveBedrms" class="form-control" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Latitude:</label>
+                    <input type="text" name="Latitude" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Longitude:</label>
+                    <input type="text" name="Longitude" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Population:</label>
+                    <input type="text" name="Population" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label>AveOccup:</label>
+                    <input type="text" name="AveOccup" class="form-control" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Predict Price</button>
+        </form>
+
+        {% if price is not none %}
+            {% if price|float %}
+                <div class="alert alert-success mt-4">
+                    <h4>🏡 Predicted House Price: ${{ price|float }}</h4>
+                </div>
+            {% else %}
+                <div class="alert alert-danger mt-4">
+                    <h4>❌ Invalid Input ${{price}}</h4>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+mlflow
+numpy
+pandas
+matplotlib
+scikit-learn
+xgboost
+flask
+fastapi
+joblib
+jupyterlab
+dvc
+seaborn
+tensorflow
+optuna
+azureml-sdk
