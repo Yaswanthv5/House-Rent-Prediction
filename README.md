@@ -54,3 +54,8 @@ We use **California Housing Data** from `sklearn.datasets`.
    ```bash
    pip install -r requirements.txt
 
+   python app.py
+   ```
+
+### website link hosted in Azure using docker container image
+--> https://housepriceapi.azurewebsites.net/
